@@ -15,10 +15,20 @@ We use Yarn as our package manager. To get the dependencies installed, just do t
 yarn install
 ```
 
-### Fire it up
+then
 
 ```terminal
-yarn redwood dev
+yarn rw dev
 ```
 
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`. 
+and open another tab and run 
+
+```terminal
+yarn mesh
+```
+
+Mesh will be loaded onto `localhost:8912` and then once logged in on `localhost:8910`. mesh will send the api request through `localhost8912` to `localhost:8910`
+
+# BUG
+
+When the profile auth gets sent through mesh it will stip out the authentication token and auth-provider
