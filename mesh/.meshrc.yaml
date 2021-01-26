@@ -1,0 +1,15 @@
+sources:
+  - name: Redwood
+    handler:
+      graphql:
+        endpoint: http://localhost:8911/graphql
+        operationHeaders:
+          Authorization: "{context.headers.authorization}"
+          "auth-provider": "{context.headers['auth-provider']}"
+
+serve:
+  port: 8912
+  cors:
+    origin: "*"
+    credentials: true
+
